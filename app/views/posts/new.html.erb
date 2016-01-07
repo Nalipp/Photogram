@@ -1,1 +1,15 @@
-<h1>new</h1>
+<div class="text-center">
+  <%= simple_form_for @post do |f| %>
+  <div class="form_wrapper">
+    <div class="form_group">
+      <%= f.input :image%>
+    </div>
+    <div class="form_group">
+      <%= f.input :caption%>
+    </div>
+    <div class="form_group">
+      <%= f.button :submit, class: "btn-success"%>
+    </div>
+  </div>
+  <% end %>
+</div>
