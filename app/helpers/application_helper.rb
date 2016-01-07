@@ -1,4 +1,5 @@
 module ApplicationHelper
+=begin
   def alert_for(flash_type)
     {
       :success => 'alert-success',
@@ -7,4 +8,5 @@ module ApplicationHelper
       :notice => 'alert-info'
     }[flash_type.to_sym] || flash_type.to_s
   end
+=end
 end

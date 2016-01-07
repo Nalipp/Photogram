@@ -1,3 +1,13 @@
-<h1>index</h1>
-
-<%= link_to "New Post", new_post_path %>
+<div class="container">
+  <div class="col-md-12">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <% @posts.each do |post| %>
+      <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+      <h3><%= post.caption %></h3>
+      <% end %>
+      <%= link_to "New Post", new_post_path %>
+    </div>
+  </div>
+</div>
