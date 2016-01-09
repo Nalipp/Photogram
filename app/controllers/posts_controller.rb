@@ -29,9 +29,16 @@ class PostsController < ApplicationController
       flash[:success] = "Post updated hombre"
       redirect_to post_path
     else
-      flash.now[:alert] = "Unable to update post. Please check the form."
+      flash.now[:alert] = "Something is wrong with you form!"
       render :edit
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = "Problem solved!  Post deleted."
+    redirect_to root_path
   end
 
   def show
