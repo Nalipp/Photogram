@@ -3,10 +3,7 @@ require 'rails_helper'
 feature 'Index displays a list of posts' do
   background do
     user = create :user
-    visit '/'
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_with user
   end
 
   scenario 'the index displays correct created job information' do
