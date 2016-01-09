@@ -13,6 +13,7 @@ gem 'capybara'
 gem 'factory_girl_rails'
 gem 'simple_form'
 gem "paperclip", "~> 4.3"
+gem 'devise'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
