@@ -8,9 +8,8 @@ feature 'User authentication' do
     visit '/'
     expect(page).to_not have_content('New Post')
 
-    click_link 'Login'
-    fill_in 'Email', with: 'sxyrailsdev@myspace.com'
-    fill_in 'Password', with: 'supersecret'
+    fill_in 'Email', with: 'fancyfrank@gmail.com'
+    fill_in 'Password', with: 'illbeback'
     click_button 'Log in'
 
     expect(page).to have_content('Signed in successfully.')
@@ -20,9 +19,8 @@ feature 'User authentication' do
 
   scenario 'can log out once logged in' do
     visit '/'
-    click_link 'Login'
-    fill_in 'Email', with: 'sxyrailsdev@myspace.com'
-    fill_in 'Password', with: 'supersecret'
+    fill_in 'Email', with: 'fancyfrank@gmail.com'
+    fill_in 'Password', with: 'illbeback'
     click_button 'Log in'
 
     click_link 'Logout'

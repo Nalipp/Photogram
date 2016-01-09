@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'viewing individual posts' do
   background do
     user = create :user
-    post = create :post
+    post = create(:post, user_id: user.id)
 
     visit '/'
     fill_in 'Email', with: user.email
