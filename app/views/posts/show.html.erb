@@ -2,7 +2,9 @@
   <h4><%= @post.user.user_name %><h4>
   <%= image_tag @post.image.url(:medium) %>
   <h3><%= @post.caption %></h3>
+  <% if current_user == @post.user %>
   <h3><%= link_to "Edit Post", edit_post_path %>
   |
   <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
