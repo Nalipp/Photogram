@@ -5,7 +5,8 @@ feature 'Deleting posts' do
   background do
     user = create :user
     user_two = create(:user, email: 'example@gmail.com',
-                          user_name: 'thepassword',
+                          user_name:'exampleme', 
+                          password: 'thepassword',
                           id: user.id + 1)
     post = create(:post, caption: 'Abs for days.', user_id: user.id)
     post_two = create(:post, user_id: user.id + 1)

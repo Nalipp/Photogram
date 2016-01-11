@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy, :show]
+  before_action :set_post, only: [:edit, :update, :show, :destroy]
   before_action :authenticate_user!
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
+  end
+
+  def show
   end
 
   def new
@@ -15,10 +18,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      flash[:success] = "Your post has been created."
-      redirect_to @post
+      flash[:success] = "Your post has been created!"
+      redirect_to posts_path
     else
-      flash[:alert] = "Halt, you fiend! You need an image to post here!"
+      flash.now[:alert] = "Halt, you fiend! You need an image to post here!"
       render :new
     end
   end
@@ -37,12 +40,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    flash[:success] = "Problem solved!  Post deleted."
+    if @post.destroy
+    flash[:alert] = "Problem solved!  Post deleted."
     redirect_to root_path
-  end
-
-  def show
+    end
   end
 
   private
