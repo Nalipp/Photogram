@@ -21,7 +21,7 @@ class PostsController < ApplicationController
       flash[:success] = "Your post has been created!"
       redirect_to posts_path
     else
-      flash.now[:alert] = "Halt, you fiend! You need an image to post here!"
+      flash.now[:alert] = "Something went wrong with your submission"
       render :new
     end
   end
