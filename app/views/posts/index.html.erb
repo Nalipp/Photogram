@@ -2,4 +2,6 @@
   <%= render 'post', post: post %>
 <% end %>
 
-<%= render 'layouts/footer' %>
+<div class="container">
+  <%= paginate @posts %>
+</div>

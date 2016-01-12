@@ -4,6 +4,7 @@
 body {
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin-bottom: 60px;
 }
 
 /* ## NAVBAR CUSTOMISATIONS ## */
@@ -202,4 +203,9 @@ html {
 #post_image {
   padding: 1em;
   margin: 0px auto;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
 }
