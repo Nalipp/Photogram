@@ -5,4 +5,4 @@ FactoryGirl.define do
     password 'illbeback'
     id 1
   end
-end  
+end

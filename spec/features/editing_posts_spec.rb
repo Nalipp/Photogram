@@ -33,7 +33,7 @@ feature 'Editing posts' do
   scenario "cannot edit a post that dosen't belong to you via the url path" do
     visit "/posts/2/edit"
     expect(page.current_path).to eq root_path
-    expect(page).to have_content("That post dosen't belong to you!")
+    expect(page).to have_content("That doesn't belong to you!")
   end
 
   scenario "a post won't update a post without an image" do
